@@ -1,6 +1,8 @@
 # Git-Good
 Console-based game guaranteed to get you good at Git!
 
+[Check it out!](https://super-confusing-baby.herokuapp.com/)
+
 ```
 
                MMM.           .MMM
