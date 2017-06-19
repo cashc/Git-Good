@@ -1,0 +1,16 @@
+<% require 'httparty'
+
+   url = 'https://api.github.com/repos/ryryqtpi/Git-Good-App/contributors'
+   response = HTTParty.get(url)
+   app = response.parsed_response
+
+   html = ''
+   app.map{|c| html +=
+       "<li>
+         <a class='contributors' href='#{c['html_url']}'>
+            <img class='avatar' alt='github avatar' src='#{c['avatar_url']}'>#{c['login']}<br>#{c['name']}</a>
+         </li>"}
+
+%>
+
+<%= html.html_safe %>

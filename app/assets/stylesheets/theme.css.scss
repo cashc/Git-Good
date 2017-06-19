@@ -1,9 +1,9 @@
-$brand-primary: #532F8C;
-$brand-language: #B01302;
+$brand-primary: #383945;
+$brand-language: #70ff5d;
 
 .jumbotron {
   background: $brand-primary;
-  color: white;
+  color: $brand-language;
   padding-bottom: 80px;
 
   .btn-primary {
@@ -14,8 +14,14 @@ $brand-language: #B01302;
     }
   }
 
+  .btn-default {
+    &:visited {
+      color: white;
+    }
+  }
+
   p {
-    color: lighten($brand-primary, 50%);
+    color: lighten($brand-primary, 60%);
     max-width: 75%;
     margin: 1em auto 2em;
   }
@@ -26,13 +32,13 @@ $brand-language: #B01302;
 
   .lang-logo {
     display: block;
-    background: $brand-language;
-    border-radius: 50%;
+    //background: $brand-language;
+    //border-radius: 50%;
     overflow: hidden;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin: auto;
-    border: 2px solid white;
+    //border: 2px solid white;
     img {
       max-width: 100%;
     }
