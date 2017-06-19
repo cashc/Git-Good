@@ -1,0 +1,19 @@
+<% require 'httparty'
+
+   url = 'https://api.github.com/repos/ryryqtpi/Git-Good-App/commits'
+   response = HTTParty.get(url)
+   commits = response.parsed_response
+
+   html = ''
+   commits.map{|c|
+     html +=
+       "<li>
+          <a href='#{c['html_url']}'>
+            #{c['sha'][-7..-1]}</a>
+          <span class='msg'>#{c['commit']['message']}</span>
+        </li>"
+   }
+
+%>
+
+<%= html.html_safe %>

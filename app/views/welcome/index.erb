@@ -5,14 +5,26 @@
     </a>
     <h1>Git Good</h1>
     <p>Console-based application to improve your Git skills and have fun doing it. The only way to get good at Git.</p>
-    <a type="button" class="btn btn-lg btn-default" href="/git-good-app-0.0.app.zip"><span class="glyphicon glyphicon-flash"></span> Download</a>
+    <a type="button" class="btn btn-lg btn-default" href="/git-good-app-0.1.app.zip"><span class="glyphicon glyphicon-flash"></span> Download</a>
     <a type="button" class="btn btn-lg btn-primary" href="https://github.com/cashc/Git-Good"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
   </div>
 </div>
 <div class="container">
   <div class="alert alert-info text-center" role="alert">
-    You'll need to login to your Github account to Git Good. If you don't have a Github account, <a href="https://github.com/join">what's wrong with you?</a>.
+    You'll need to login to your Github account to Git Good. If you don't have a Github account, <a href="https://github.com/join">join!</a>.
   </div>
   <hr>
-  </div> <!-- row -->
+  <div class="col-md-6">
+    <h3>App Commits</h3>
+    <ul class="commits">
+      <%= render :template => 'githubAPI/app_commits' %>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h3> Web Commits</h3>
+    <ul class="commits">
+      <%= render :template => 'githubAPI/web_commits' %>
+    </ul>
+  </div>
+  <hr>
 </div>
