@@ -14,6 +14,12 @@ $brand-language: #70ff5d;
     }
   }
 
+  .btn-default {
+    &:visited {
+      color: white;
+    }
+  }
+
   p {
     color: lighten($brand-primary, 60%);
     max-width: 75%;
