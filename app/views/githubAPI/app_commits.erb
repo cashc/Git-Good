@@ -9,7 +9,7 @@
      html +=
        "<li>
           <a href='#{c['html_url']}'>
-            #{c['sha'][-7..-1]}</a>
+            #{c['sha'][0..6]}</a>
           <span class='msg'>#{c['commit']['message']}</span>
         </li>"
    }

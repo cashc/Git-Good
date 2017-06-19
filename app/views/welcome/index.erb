@@ -1,7 +1,7 @@
 <div class="jumbotron text-center">
   <div class="container">
     <a href="/" class="lang-logo">
-      <img src="<%= asset_path('lang-logo.png') %>">
+      <img src="<%= asset_path('logo.png') %>">
     </a>
     <h1>Git Good</h1>
     <p>Console-based application to improve your Git skills and have fun doing it. The only way to get good at Git.</p>
@@ -12,19 +12,6 @@
 <div class="container">
   <div class="alert alert-info text-center" role="alert">
     You'll need to login to your Github account to Git Good. If you don't have a Github account, <a href="https://github.com/join">join!</a>.
-  </div>
-  <hr>
-  <div class="col-md-6">
-    <h3>App Commits</h3>
-    <ul class="commits">
-      <%= render :template => 'githubAPI/app_commits' %>
-    </ul>
-  </div>
-  <div class="col-md-6">
-    <h3> Web Commits</h3>
-    <ul class="commits">
-      <%= render :template => 'githubAPI/web_commits' %>
-    </ul>
   </div>
   <hr>
 </div>

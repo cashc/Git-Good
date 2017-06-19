@@ -7,7 +7,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js' %>
   <%= csrf_meta_tags %>
-  <link rel="shortcut icon" href="<%= asset_path('favicon.png') %>" type="image/x-icon">
+  <link rel="shortcut icon" href="<%= asset_path('logo.png') %>" type="image/x-icon">
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top navbar-inverse">
@@ -19,9 +19,22 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown navbar-right">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Contributors <span class="caret"></span></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span>
+          Contributors<span class="caret"></span>
+        </a>
         <ul class="dropdown-menu" role="menu">
-          <%= render :template => 'githubAPI/contributors' %>
+          <li>
+            <a class='contributor' href='https://github.com/ryryqtpi'><img class='avatar' alt='github avatar' src='https://avatars0.githubusercontent.com/u/6321263?v=3'></a>
+            <a class='contributor' href='https://github.com/ryryqtpi'>ryryqtpi<br><span class="name">Ryan Feldman</span></a>
+          </li>
+          <li>
+            <a class='contributor' href='https://github.com/cashc'><img class='avatar' alt='github avatar' src='https://avatars1.githubusercontent.com/u/11993240?v=3'></a>
+            <a class='contributor' href='https://github.com/cashc'>cashc<br><span class="name">Cash Compton</span></a>
+          </li>
+          <li>
+            <a class='contributor' href='https://github.com/tammiet'><img class='avatar' alt='github avatar' src='https://avatars2.githubusercontent.com/u/14841815?v=3'></a>
+            <a class='contributor' href='https://github.com/tammiet'>tammiet<br><span class="name">Tammie Thong</span></a>
+        </li>
         </ul>
       </li>
     </ul>
@@ -30,5 +43,14 @@
 
 <%= yield %>
 
+<footer>
+  <div class="text-center">
+    <ul>
+      <li>
+        <span class="glyphicon glyphicon-copyright-mark"></span> 2017
+      </li>
+    </ul>
+  </div>
+</footer>
 </body>
 </html>
