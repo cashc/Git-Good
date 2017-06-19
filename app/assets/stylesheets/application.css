@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+img.avatar {
+    width: 32px;
+    height: 32px;
+    margin: 0 8px 0 0;
+}
+
+li > a.contributors {
+    font-size: 18px;
+}
