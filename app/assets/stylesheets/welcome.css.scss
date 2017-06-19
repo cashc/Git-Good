@@ -8,6 +8,10 @@ ul.commits {
   padding: 0;
 }
 
+ul.commits > li > a {
+  color: darkgoldenrod;
+}
+
 ul.commits > li > .msg {
   font: 12px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
