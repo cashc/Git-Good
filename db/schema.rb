@@ -11,25 +11,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616131842) do
+ActiveRecord::Schema.define(version: 20170621194444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "commands", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "exercise_steps", force: :cascade do |t|
+    t.integer  "exercise_id"
+    t.integer  "step_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "exercise_steps", ["exercise_id"], name: "index_exercise_steps_on_exercise_id", using: :btree
+  add_index "exercise_steps", ["step_id"], name: "index_exercise_steps_on_step_id", using: :btree
+
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.text     "objective"
-    t.text     "instructions"
-    t.float    "difficulty"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "diffuculty"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "step_commands", force: :cascade do |t|
+    t.integer  "step_id"
+    t.integer  "command_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "step_commands", ["command_id"], name: "index_step_commands_on_command_id", using: :btree
+  add_index "step_commands", ["step_id"], name: "index_step_commands_on_step_id", using: :btree
+
+  create_table "steps", force: :cascade do |t|
+    t.string   "instruction"
+    t.string   "answer"
+    t.string   "correct_response"
+    t.string   "error_response"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
-    t.string   "first_name"
-    t.string   "last_name"
     t.integer  "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

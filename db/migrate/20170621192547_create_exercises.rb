@@ -3,9 +3,7 @@ class CreateExercises < ActiveRecord::Migration
     create_table :exercises do |t|
       t.string :name
       t.text :description
-      t.text :objective
-      t.text :instructions
-      t.float :difficulty
+      t.integer :diffuculty
 
       t.timestamps null: false
     end
