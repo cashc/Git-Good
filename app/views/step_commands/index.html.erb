@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Step Commands</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Step</th>
+      <th>Command</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @step_commands.each do |step_command| %>
+      <tr>
+        <td><%= step_command.step_id %></td>
+        <td><%= step_command.command_id %></td>
+        <td><%= link_to 'Show', step_command %></td>
+        <td><%= link_to 'Edit', edit_step_command_path(step_command) %></td>
+        <td><%= link_to 'Destroy', step_command, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Step command', new_step_command_path %>
