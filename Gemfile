@@ -35,6 +35,9 @@ gem 'puma'
 #HTTParty
 gem 'httparty'
 
+#Active Model Serizalizers
+gem 'active_model_serializers'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170621194444) do
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "diffuculty"
+    t.integer  "difficulty"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
