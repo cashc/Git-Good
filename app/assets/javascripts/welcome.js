@@ -77,7 +77,6 @@ function main(){
 function line(content, t) {
     setTimeout(function(){
         document.getElementById("console").innerHTML += content;
-        console.log(content);
     }, t);
 }
 
@@ -91,6 +90,5 @@ function printChars(content, t){
 function char(char, t) {
     setTimeout(function(){
         document.getElementById("console").innerHTML += char;
-        console.log(char);
     }, t);
 }
