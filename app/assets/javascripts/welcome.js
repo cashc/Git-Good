@@ -44,7 +44,7 @@ document.onreadystatechange = function() {
 };
 
 const lineTime = 1700;
-const charTime = 100;
+const charTime = 80;
 var content;
 var printedNewLine;
 var time = -1200;
