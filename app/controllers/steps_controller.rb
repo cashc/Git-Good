@@ -5,6 +5,7 @@ class StepsController < ApplicationController
   # GET /steps.json
   def index
     @steps = Step.all
+    render :json => @steps, each_serializer: StepsSerializer
   end
 
   # GET /steps/1

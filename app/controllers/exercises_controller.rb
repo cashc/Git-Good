@@ -5,6 +5,7 @@ class ExercisesController < ApplicationController
   # GET /exercises.json
   def index
     @exercises = Exercise.all
+    render :json => @exercises, each_serializer: ExercisesSerializer
   end
 
   # GET /exercises/1
