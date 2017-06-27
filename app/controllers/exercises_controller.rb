@@ -5,7 +5,10 @@ class ExercisesController < ApplicationController
   # GET /exercises.json
   def index
     @exercises = Exercise.all
-    render :json => @exercises, each_serializer: ExercisesSerializer
+    respond_to do |format|
+      format.html { @exercises }
+      format.json { render json: @exercises, each_serializer: ExercisesSerializer }
+    end
   end
 
   # GET /exercises/1

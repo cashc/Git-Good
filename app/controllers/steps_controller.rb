@@ -5,12 +5,19 @@ class StepsController < ApplicationController
   # GET /steps.json
   def index
     @steps = Step.all
-    render :json => @steps, each_serializer: StepsSerializer
+    respond_to do |format|
+      format.html { @steps }
+      format.json { render json: @steps, each_serializer: StepsSerializer }
+    end
   end
 
   # GET /steps/1
   # GET /steps/1.json
   def show
+    respond_to do |format|
+      format.html { @step }
+      format.json { render json: @step, serializer: StepsSerializer }
+    end
   end
 
   # GET /steps/new
