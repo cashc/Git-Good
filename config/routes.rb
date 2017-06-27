@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   resources :exercise_steps
   resources :commands
   resources :steps
-  resources :exercises
+  resources :exercises do
+    resources :steps do
+      resources :commands
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -5,6 +5,10 @@ class CommandsController < ApplicationController
   # GET /commands.json
   def index
     @commands = Command.all
+    respond_to do |format|
+      format.html { @commands }
+      format.json { render json: @commands, each_serializer: CommandsSerializer }
+    end
   end
 
   # GET /commands/1
