@@ -14,6 +14,10 @@ class ExercisesController < ApplicationController
   # GET /exercises/1
   # GET /exercises/1.json
   def show
+    respond_to do |format|
+      format.html { @exercise }
+      format.json { render json: @exercise, serializer: ExercisesSerializer }
+    end
   end
 
   # GET /exercises/new
