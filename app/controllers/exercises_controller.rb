@@ -6,9 +6,11 @@ class ExercisesController < ApplicationController
   def index
     @exercises = Exercise.all
 
-    respond_to do |format|
-      format.html { @exercises }
-      format.json { render json: @exercises, each_serializer: ExercisesSerializer }
+    if params['difficulty'] != nil
+      @exercises = Exercise.where('difficulty <= ?',params['difficulty'])
+      respond_to do |format|
+        format.json { render json: @exercises, each_serializer: ExercisesSerializer }
+      end
     end
   end
 
