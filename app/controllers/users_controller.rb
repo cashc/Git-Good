@@ -5,6 +5,18 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    if params['username'] != nil
+      @user = User.find_by(username:params['username'])
+      respond_to do |format|
+        if @user != nil
+          format.html { render :show }
+          format.json { render :show }
+        else
+          format.html { render :index, notice: "No user '#{params['username']}' found." }
+          format.json { render json: {'Error' => "No user '#{params['username']}' found."} }
+        end
+      end
+    end
   end
 
   # GET /users/1

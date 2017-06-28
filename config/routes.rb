@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   #   end
   # end
 
+  # get 'users/:username', to:'users#'
   get 'exercises/:id/steps', to: 'exercises#steps'
   get 'exercises/:id/steps/:id', to: 'steps#show'
   get 'exercises/:id/steps/:id/commands', to: 'steps#commands'
