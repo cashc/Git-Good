@@ -5,6 +5,7 @@ class ExercisesController < ApplicationController
   # GET /exercises.json
   def index
     @exercises = Exercise.all
+
     respond_to do |format|
       format.html { @exercises }
       format.json { render json: @exercises, each_serializer: ExercisesSerializer }
@@ -17,6 +18,17 @@ class ExercisesController < ApplicationController
     respond_to do |format|
       format.html { @exercise }
       format.json { render json: @exercise, serializer: ExercisesSerializer }
+    end
+  end
+
+  # GET /exercises/1
+  # GET /exercises/1.json
+  def steps
+    @exercise = Exercise.find(params['id'])
+
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @exercise.steps }
     end
   end
 

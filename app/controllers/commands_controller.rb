@@ -7,7 +7,7 @@ class CommandsController < ApplicationController
     @commands = Command.all
     respond_to do |format|
       format.html { @commands }
-      format.json { render json: @commands, each_serializer: CommandsSerializer }
+      format.json { render json: @commands, serializer: CommandsSerializer }
     end
   end
 

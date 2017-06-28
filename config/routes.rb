@@ -6,12 +6,21 @@ Rails.application.routes.draw do
   resources :step_commands
   resources :exercise_steps
   resources :commands
-  resources :steps
-  resources :exercises do
-    resources :steps do
-      resources :commands
-    end
-  end
+
+  resources :steps #do
+    # resources :commands
+  # end
+
+  resources :exercises #do
+  #   resources :steps do
+  #     resources :commands
+  #   end
+  # end
+
+  get 'exercises/:id/steps', to: 'exercises#steps'
+  get 'exercises/:id/steps/:id', to: 'steps#show'
+  get 'exercises/:id/steps/:id/commands', to: 'steps#commands'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

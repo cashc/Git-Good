@@ -20,6 +20,15 @@ class StepsController < ApplicationController
     end
   end
 
+  def commands
+    @step = Step.find(params['id'])
+
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @step.commands }
+    end
+  end
+
   # GET /steps/new
   def new
     @step = Step.new
