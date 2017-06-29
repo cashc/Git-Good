@@ -7,7 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Difficulty</th>
+      <th>Level</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= exercise.name %></td>
         <td><%= exercise.description %></td>
-        <td><%= exercise.difficulty %></td>
+        <td><%= exercise.level %></td>
         <td><%= link_to 'Show', exercise %></td>
         <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
         <td><%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>

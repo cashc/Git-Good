@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621194444) do
+ActiveRecord::Schema.define(version: 20170629205122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "commands", force: :cascade do |t|
     t.string   "name"
-    t.string   "url"
+    t.string   "argument"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "color"
   end
 
   create_table "exercise_steps", force: :cascade do |t|
@@ -30,13 +31,14 @@ ActiveRecord::Schema.define(version: 20170621194444) do
     t.datetime "updated_at",  null: false
   end
 
+  add_index "exercise_steps", ["exercise_id", "step_id"], name: "exercise_steps_exercise_id_step_id_key", unique: true, using: :btree
   add_index "exercise_steps", ["exercise_id"], name: "index_exercise_steps_on_exercise_id", using: :btree
   add_index "exercise_steps", ["step_id"], name: "index_exercise_steps_on_step_id", using: :btree
 
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "difficulty"
+    t.integer  "level"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -49,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170621194444) do
   end
 
   add_index "step_commands", ["command_id"], name: "index_step_commands_on_command_id", using: :btree
+  add_index "step_commands", ["step_id", "command_id"], name: "step_commands_step_id_command_id_key", unique: true, using: :btree
   add_index "step_commands", ["step_id"], name: "index_step_commands_on_step_id", using: :btree
 
   create_table "steps", force: :cascade do |t|
@@ -67,4 +70,8 @@ ActiveRecord::Schema.define(version: 20170621194444) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "exercise_steps", "exercises", name: "exercise_steps_exercises_id_fk"
+  add_foreign_key "exercise_steps", "steps", name: "exercise_steps_steps_id_fk"
+  add_foreign_key "step_commands", "commands", name: "step_commands_commands_id_fk"
+  add_foreign_key "step_commands", "steps", name: "step_commands_steps_id_fk"
 end

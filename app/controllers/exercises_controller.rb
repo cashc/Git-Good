@@ -5,7 +5,7 @@ class ExercisesController < ApplicationController
   # GET /exercises.json
   def index
     @exercises = Exercise.all
-    @exercises = Exercise.where('difficulty <= ?',params['difficulty']) if params['difficulty'] != nil
+    @exercises = Exercise.where('level <= ?',params['level']) if params['level'] != nil
     respond_to do |format|
       format.html { @exercises }
       format.json { render json: @exercises, each_serializer: ExercisesSerializer }
@@ -90,6 +90,6 @@ class ExercisesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:name, :description, :difficulty)
+      params.require(:exercise).permit(:name, :description, :level)
     end
 end
