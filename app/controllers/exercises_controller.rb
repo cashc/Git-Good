@@ -5,13 +5,12 @@ class ExercisesController < ApplicationController
   # GET /exercises.json
   def index
     @exercises = Exercise.all
-
-    if params['difficulty'] != nil
-      @exercises = Exercise.where('difficulty <= ?',params['difficulty'])
-      respond_to do |format|
-        format.json { render json: @exercises, each_serializer: ExercisesSerializer }
-      end
+    @exercises = Exercise.where('difficulty <= ?',params['difficulty']) if params['difficulty'] != nil
+    respond_to do |format|
+      format.html { @exercises }
+      format.json { render json: @exercises, each_serializer: ExercisesSerializer }
     end
+
   end
 
   # GET /exercises/1
