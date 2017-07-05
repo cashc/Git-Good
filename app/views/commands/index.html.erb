@@ -6,7 +6,8 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Url</th>
+      <th>Argument</th>
+      <th>Color</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +16,8 @@
     <% @commands.each do |command| %>
       <tr>
         <td><%= command.name %></td>
-        <td><%= command.url %></td>
+        <td><%= command.argument %></td>
+        <td><%= command.color %></td>
         <td><%= link_to 'Show', command %></td>
         <td><%= link_to 'Edit', edit_command_path(command) %></td>
         <td><%= link_to 'Destroy', command, method: :delete, data: { confirm: 'Are you sure?' } %></td>
