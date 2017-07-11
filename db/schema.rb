@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629205122) do
+ActiveRecord::Schema.define(version: 20170711191218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20170629205122) do
     t.string   "error_response"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "number"
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,8 +71,4 @@ ActiveRecord::Schema.define(version: 20170629205122) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "exercise_steps", "exercises", name: "exercise_steps_exercises_id_fk"
-  add_foreign_key "exercise_steps", "steps", name: "exercise_steps_steps_id_fk"
-  add_foreign_key "step_commands", "commands", name: "step_commands_commands_id_fk"
-  add_foreign_key "step_commands", "steps", name: "step_commands_steps_id_fk"
 end
