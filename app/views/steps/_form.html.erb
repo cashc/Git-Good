@@ -13,19 +13,19 @@
 
   <div class="field">
     <%= f.label :instruction %><br>
-    <%= f.text_field :instruction %>
+    <%= f.text_area :instruction, :cols => '64', :rows => '7' %>
   </div>
   <div class="field">
     <%= f.label :answer %><br>
-    <%= f.text_field :answer %>
+    <%= f.text_field :answer, :size => 64 %>
   </div>
   <div class="field">
     <%= f.label :correct_response %><br>
-    <%= f.text_field :correct_response %>
+    <%= f.text_area :correct_response, :cols => '64', :rows => '7' %>
   </div>
   <div class="field">
     <%= f.label :error_response %><br>
-    <%= f.text_field :error_response %>
+    <%= f.text_area :error_response, :cols => '64', :rows => '7' %>
   </div>
   <div class="actions">
     <%= f.submit %>

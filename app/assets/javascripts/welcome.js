@@ -39,7 +39,9 @@ var lineBeginning = "~"+user;
 
 document.onreadystatechange = function() {
     if (document.readyState === 'complete') {
-        main();
+        if(document.getElementById("console") !== null){
+            main();
+        }
     }
 };
 
