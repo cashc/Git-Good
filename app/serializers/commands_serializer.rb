@@ -1,3 +1,3 @@
 class CommandsSerializer < ActiveModel::Serializer
-  attributes :id, :name, :url
+  attributes :id, :name, :argument, :color
 end
