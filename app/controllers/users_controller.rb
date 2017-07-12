@@ -53,6 +53,12 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    if(params[:level] != nil)
+      level = params[:level]
+      params[:user] = params.delete :level
+      params[:user] = {:level => level}
+    end
+
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -82,6 +88,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.permit(:id, :username, :level)
+      params.require(:user).permit(:username, :level)
     end
 end

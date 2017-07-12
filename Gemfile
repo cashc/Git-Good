@@ -38,6 +38,9 @@ gem 'httparty'
 #Active Model Serizalizers
 gem 'active_model_serializers'
 
+#ByeBug
+gem 'byebug'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

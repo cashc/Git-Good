@@ -42,6 +42,7 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.4)
     builder (3.2.3)
+    byebug (9.0.6)
     case_transform (0.2)
       activesupport
     coffee-rails (4.0.1)
@@ -152,6 +153,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  byebug
   coffee-rails (~> 4.0.0)
   httparty
   jbuilder (~> 2.0)
