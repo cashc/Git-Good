@@ -45,11 +45,11 @@ document.onreadystatechange = function() {
     }
 };
 
-const lineTime = 1700;
-const charTime = 80;
+const lineTime = 1000;
+const charTime = 75;
 var content;
 var printedNewLine;
-var time = -1200;
+var time = -900;
 
 function main(){
     line(lineBeginning, 0);
